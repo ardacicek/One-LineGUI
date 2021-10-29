@@ -14,8 +14,8 @@ d50 = d50/1000;
 Cgb=Lb/T;
 K1=0.0001/d50; %https://etd.lib.metu.edu.tr/upload/12608582/index.pdf pg27
 beta1=K1/(16*(s-1)*(1-p));
-alfabs_init=alfab;
-
+alfabs_init = alfab;
+alfabCheck = alfab;
 %% Setting up the grid
 xmid=repmat(linspace(0,1500,500),round(duration/dt),1); %adjust dx to satisfy Rs
 ymid=repmat(zeros(1,size(xmid,2)),size(xmid,1),1); 
@@ -28,6 +28,15 @@ Dc=H0*(2.28-10.9*H0/L0); %depth of closure
 % alfab = deg2rad(11.84);
 % alfabs_init=alfab;
 % d50 = 0.00025;
+if alfabs_init < 0
+    alfabs_init = abs(alfabs_init);
+    alfab = abs(alfab);
+end
+
+if alfabs_init == 0
+    alfabs_init = 0.000001; % tanımsız olmasın diye
+    alfab = 0.000001;
+end
 %% Initializing the simulation
 if formulation == "Default"
     % Formulation in distributed sheets
@@ -246,10 +255,16 @@ elseif formulation == "Modified Kamphuis (2013)" % https://www.leovanrijn-sedime
 
     end
 end
+
 %% Stability Check
 Rs=Q./(alfab*Dc*dx^2)*dt;
 maxRs=max(max(Rs));
 Q_init_year = Q_init*365*24*3600;
+if alfabCheck > 0
+    Ymid = -Ymid;
+else
+    Q_init_year = -Q_init_year;
+end
 % if maxRs<0.5
 %     
 %     cprintf('*green','Stability Condition is Satisfied.\n');
@@ -259,6 +274,7 @@ Q_init_year = Q_init*365*24*3600;
 %  duration=duration/3600/24; %seconds to day
 %  cprintf('*blue','Duration=%f days\n',duration);
 %% Plotting
+% figure()
 % plot(xmid(1,:),Ymid(1,:));                              %Initial shape
 % hold on 
 % % plot(xmid(round(size(xmid,1)/64),:),Ymid(round(size(Ymid,1)/64),:));
