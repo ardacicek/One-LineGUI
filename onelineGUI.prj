@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="2489267993" file="C:\Users\Arda\Desktop\One-LineGUI\onelineGUI.prj" location="C:\Users\Arda\Desktop\One-LineGUI" name="onelineGUI" preferred-package-location="C:\Users\Arda\Desktop\One-LineGUI\onelineGUI\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>OneLineGUI</param.appname>
+  <configuration build-checksum="2489267993" file="C:\Users\Arda\Desktop\Programlar &amp; Kodlama\GUI-Projects\MATLAB\One-LineGUI\v1.1\onelineGUI.prj" location="C:\Users\Arda\Desktop\Programlar &amp; Kodlama\GUI-Projects\MATLAB\One-LineGUI\v1.1" name="onelineGUI" preferred-package-location="C:\Users\Arda\Desktop\One-LineGUI\onelineGUI\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>onelineGUI</param.appname>
     <param.icon>${PROJECT_ROOT}\onelineGUI_resources\icon.ico</param.icon>
     <param.icons>
       <file>${PROJECT_ROOT}\onelineGUI_resources\icon_48.png</file>
@@ -8,7 +8,7 @@
       <file>${PROJECT_ROOT}\onelineGUI_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\onelineGUI_resources\icon_16.png</file>
     </param.icons>
-    <param.version>1.0</param.version>
+    <param.version>1.1</param.version>
     <param.authnamewatermark>Yagiz Arda Cicek</param.authnamewatermark>
     <param.email>ciceka@metu.edu.tr</param.email>
     <param.company>Middle East Technical University</param.company>
@@ -23,7 +23,15 @@
 - Make sure MATLAB Runtime 9.9 is installed on your computer.
 - Press Start button to initiate the software.
 - Drag the sliders to adjust parameters and watch shoreline response in real time.
-- Approach angle = 90 means waves are attacking from west and 0 means from north. Unfortunately, there is no option to include waves coming from east directions yet.</param.install.notes>
+- Approach angle = 90 means waves are attacking from west and 0 means from north. Unfortunately, there is no option to include waves coming from east directions yet.
+
+What's new in v1.1:
+- You can now select formulations for longshore transport rate.
+- You can see annual transport rate in the app.
+
+Notes:
+-Please move sliders slowly.
+-If app does not respond close it via task manager (sometimes Rs values might have  imaginary component which is problematic).</param.install.notes>
     <param.target.install.notes />
     <param.intermediate>${PROJECT_ROOT}\onelineGUI\for_testing</param.intermediate>
     <param.files.only>${PROJECT_ROOT}\onelineGUI\for_redistribution_files_only</param.files.only>
@@ -50,11 +58,11 @@
 	 
  Input Arguments 
 	 -?  print help on how to use the application 
-	 input arguments 
- Description 
- 	 An educational software to see how different parameters affect the shoreline shape according to one line theory. CERC formula is used in transport rate calculations. You can slide the variable bars and see how each parameter affects the shoreline shape.</param.help.text>
+	 input arguments</param.help.text>
     <unset>
-      <param.version />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
       <param.guid />
       <param.installpath.combo />
       <param.target.install.notes />
@@ -89,9 +97,9 @@
       <file>${PROJECT_ROOT}\OneLine.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="OneLineGUI.exe" optional="false">C:\Users\Arda\Desktop\One-LineGUI\onelineGUI\for_testing\OneLineGUI.exe</file>
-      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="readme.txt" optional="true">C:\Users\Arda\Desktop\One-LineGUI\onelineGUI\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="splash.png" optional="false">C:\Users\Arda\Desktop\One-LineGUI\onelineGUI\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="splash.png" optional="false">C:\Users\Arda\Desktop\Programlar &amp; Kodlama\GUI-Projects\MATLAB\One-LineGUI\v1.1\onelineGUI\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="readme.txt" optional="true">C:\Users\Arda\Desktop\Programlar &amp; Kodlama\GUI-Projects\MATLAB\One-LineGUI\v1.1\onelineGUI\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\onelineGUI\for_testing" name="onelineGUI.exe" optional="false">C:\Users\Arda\Desktop\Programlar &amp; Kodlama\GUI-Projects\MATLAB\One-LineGUI\v1.1\onelineGUI\for_testing\onelineGUI.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
